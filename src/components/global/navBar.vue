@@ -1,11 +1,12 @@
 <template>
   <nav class="">
-    <div class="first row me-0 mb-2">
-      <div class="col-1">
+    <div
+      class="first container d-flex justify-content-between align-items-center gap-3"
+    >
+      <div class="logo">
         <img src="../../assets/images/logo.png" alt="" />
       </div>
-      <div class="col-1"></div>
-      <div class="col-5 search">
+      <div class="search">
         <input type="text" class="" placeholder="Search the store" />
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,9 +21,8 @@
           />
         </svg>
       </div>
-      <div class="col-1"></div>
       <div
-        class="side-end col-4 d-flex justify-content-between align-items-center text-center"
+        class="side-end d-flex justify-content-between align-items-center text-center"
       >
         <div class="available fw-normal" style="font-size: 14px">
           Available 24/7 at <br />
@@ -62,7 +62,12 @@
           </div>
           <p class="title">sign in</p>
         </div>
-        <div class="cart">
+        <div
+          class="cart"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
           <span class="count position-absolute">2</span>
           <div class="icon">
             <svg
@@ -82,8 +87,10 @@
         </div>
       </div>
     </div>
-    <div class="second row me-0">
-      <ul class="col-7 links d-flex justify-content-between">
+    <div
+      class="second container d-flex justify-content-between align-items-center"
+    >
+      <ul class="links ps-0 d-flex justify-content-between gap-2">
         <li class="link demo">
           <router-link to="">Theme Demo</router-link>
         </li>
@@ -109,9 +116,7 @@
           <router-link to="">buy Ella</router-link>
         </li>
       </ul>
-      <div
-        class="col-5 assissant d-flex justify-content-end align-items-center"
-      >
+      <div class="assissant d-flex justify-content-end align-items-center">
         <div class="help me-3">
           <div class="icon d-flex align-items-center">
             <svg
@@ -367,7 +372,7 @@ nav {
   color: #fff;
   .search {
     position: relative;
-    margin-bottom: 40px;
+    flex: 1.5;
     input {
       border: none;
       width: 100%;
@@ -384,8 +389,15 @@ nav {
       top: 14px;
     }
   }
+  .first,
+  .second {
+    max-width: 1199px;
+    margin: auto;
+  }
   .first {
+    margin-bottom: 2rem;
     .side-end {
+      flex: 1;
       .icon,
       .title {
         color: #ffc324;
@@ -472,6 +484,7 @@ nav {
           position: absolute;
           right: -10px;
           top: 30px;
+          z-index: 2;
           background: white;
           color: #000;
           border-radius: 10px;

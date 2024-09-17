@@ -4,8 +4,12 @@
     <NavBar></NavBar>
     <!--*/ navbar /*-->
     <!-- content -->
+    <main>
+      <slot></slot>
+    </main>
     <!--*/ content /*-->
     <!-- sidebar -->
+    <sidebarVue />
     <!--*/ sidebar /*-->
     <!-- footer -->
     <!--*/ footer /*-->
@@ -14,4 +18,5 @@
 
 <script setup>
 import NavBar from "./global/navBar.vue";
+import sidebarVue from "./global/sidebarComponent.vue";
 </script>

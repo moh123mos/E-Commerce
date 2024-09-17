@@ -1,9 +1,11 @@
 <template>
-  <div class="">
-    <AppLayout></AppLayout>
+  <div class="home-page">
+    <UpperBanner />
   </div>
 </template>
 
 <script setup>
-import AppLayout from "@/components/AppLayout.vue";
+import UpperBanner from "@/components/HomePage/upperBanner.vue";
+
+// import AppLayout from "@/components/AppLayout.vue";
 </script>
