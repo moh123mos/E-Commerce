@@ -31,7 +31,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    flex-wrap: wrap;
+    padding-top: 30px;
     .left {
       h1 {
         font-weight: bold;

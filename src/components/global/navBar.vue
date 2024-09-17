@@ -1,5 +1,5 @@
 <template>
-  <nav class="">
+  <nav class="desktop">
     <div
       class="first container d-flex justify-content-between align-items-center gap-3"
     >
@@ -177,6 +177,79 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </nav>
+  <!-- in mobile -->
+  <nav class="mobile d-flex align-items-center justify-content-between">
+    <div class="left d-flex align-items-center">
+      <div class="menu" style="margin-right: 25px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          x="0px"
+          y="0px"
+          width="30"
+          viewBox="0 0 50 50"
+        >
+          <path
+            d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
+          ></path>
+        </svg>
+      </div>
+      <div class="search">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          fill="currentColor"
+          class="bi bi-search"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+          />
+        </svg>
+      </div>
+    </div>
+    <div class="center">
+      <img src="../../assets/images/footer-logo.webp" alt="logo" />
+    </div>
+    <div class="right d-flex align-items-center">
+      <div class="account" style="margin-right: 25px">
+        <svg
+          width="30"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 32 32"
+          aria-hidden="true"
+          focusable="false"
+          role="presentation"
+          class="icon icon-account"
+        >
+          <path
+            d="M 16 3 C 8.832031 3 3 8.832031 3 16 C 3 23.167969 8.832031 29 16 29 C 23.167969 29 29 23.167969 29 16 C 29 8.832031 23.167969 3 16 3 Z M 16 5 C 22.085938 5 27 9.914063 27 16 C 27 22.085938 22.085938 27 16 27 C 9.914063 27 5 22.085938 5 16 C 5 9.914063 9.914063 5 16 5 Z M 16 8 C 13.25 8 11 10.25 11 13 C 11 14.515625 11.707031 15.863281 12.78125 16.78125 C 10.53125 17.949219 9 20.300781 9 23 L 11 23 C 11 20.226563 13.226563 18 16 18 C 18.773438 18 21 20.226563 21 23 L 23 23 C 23 20.300781 21.46875 17.949219 19.21875 16.78125 C 20.292969 15.863281 21 14.515625 21 13 C 21 10.25 18.75 8 16 8 Z M 16 10 C 17.667969 10 19 11.332031 19 13 C 19 14.667969 17.667969 16 16 16 C 14.332031 16 13 14.667969 13 13 C 13 11.332031 14.332031 10 16 10 Z"
+          ></path>
+        </svg>
+      </div>
+      <div
+        class="cart"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasExample"
+        aria-controls="offcanvasExample"
+      >
+        <span class="count position-absolute">2</span>
+        <svg
+          width="25"
+          viewBox="0 0 30 30"
+          class="icon icon-cart"
+          enable-background="new 0 0 30 30"
+        >
+          <g>
+            <g>
+              <path
+                d="M20,6V5c0-2.761-2.239-5-5-5s-5,2.239-5,5v1H4v24h22V6H20z M12,5c0-1.657,1.343-3,3-3s3,1.343,3,3v1h-6V5z M24,28H6V8h4v3    h2V8h6v3h2V8h4V28z"
+              ></path>
+            </g>
+          </g>
+        </svg>
       </div>
     </div>
   </nav>
@@ -366,10 +439,13 @@ const openList = () => {
 $font-color: #ffc324;
 $bg-color: #161880;
 nav {
-  background-color: #161880;
-  padding: 18px;
-  padding-bottom: 22px;
-  color: #fff;
+  &.desktop {
+    background-color: #161880;
+    color: #fff;
+    padding: 18px;
+    padding-bottom: 22px;
+  }
+  padding: 10px;
   .search {
     position: relative;
     flex: 1.5;
@@ -388,11 +464,6 @@ nav {
       right: 20px;
       top: 14px;
     }
-  }
-  .first,
-  .second {
-    max-width: 1199px;
-    margin: auto;
   }
   .first {
     margin-bottom: 2rem;
@@ -496,6 +567,45 @@ nav {
         }
       }
     }
+  }
+}
+nav.mobile {
+  .center {
+    text-align: center;
+    img {
+      width: 80%;
+    }
+  }
+  .cart {
+    position: relative;
+    .count {
+      right: -10px;
+      top: -10px;
+      background: #0a6cdc;
+      color: white;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      font-size: 14px;
+      padding-top: 4px;
+      padding-left: 8px;
+    }
+  }
+}
+@media (max-width: 991px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .mobile {
+    display: none !important;
+  }
+  .desktop {
+    display: block;
   }
 }
 </style>
