@@ -8,20 +8,33 @@
 import AppLayout from "./components/AppLayout.vue";
 </script>
 <style lang="scss">
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 ul {
   list-style: none;
 }
-nav {
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@media (max-width: 991px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .mobile {
+    display: none !important;
+  }
+  .desktop {
+    display: block;
   }
 }
 </style>

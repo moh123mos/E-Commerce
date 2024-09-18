@@ -183,7 +183,13 @@
   <!-- in mobile -->
   <nav class="mobile d-flex align-items-center justify-content-between">
     <div class="left d-flex align-items-center">
-      <div class="menu" style="margin-right: 25px">
+      <div
+        class="menu"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#resposive-links"
+        aria-controls="resposive-links"
+        style="margin-right: 25px"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           x="0px"
@@ -230,10 +236,10 @@
         </svg>
       </div>
       <div
-        class="cart"
+        class="cart me-2"
         data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasExample"
-        aria-controls="offcanvasExample"
+        data-bs-target="#cart-offcanvas"
+        aria-controls="cart-offcanvas"
       >
         <span class="count position-absolute">2</span>
         <svg
@@ -581,14 +587,14 @@ nav.mobile {
     .count {
       right: -10px;
       top: -10px;
-      background: #0a6cdc;
+      background: #000;
       color: white;
       width: 25px;
       height: 25px;
       border-radius: 50%;
-      font-size: 14px;
-      padding-top: 4px;
-      padding-left: 8px;
+      font-size: 12px;
+      padding-top: 5px;
+      padding-left: 9px;
     }
   }
 }
