@@ -446,6 +446,9 @@ $font-color: #ffc324;
 $bg-color: #161880;
 nav {
   &.desktop {
+    position: absolute;
+    width: 100%;
+    z-index: 3;
     background-color: #161880;
     color: #fff;
     padding: 18px;
