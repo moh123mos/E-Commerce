@@ -141,11 +141,11 @@ const changeTransalte = (i) => {
     }
   }
   if (isDisabledPrev) {
-    nextMoveBtn.value.style = `fill: #000`;
-    prvMoveBtn.value.style = `fill: #0000006b`;
+    nextMoveBtn.value.style = `fill: #000;cursor: pointer;`;
+    prvMoveBtn.value.style = `fill: #0000006b;cursor: auto;`;
   } else {
-    prvMoveBtn.value.style = `fill: #000`;
-    nextMoveBtn.value.style = `fill: #0000006b`;
+    prvMoveBtn.value.style = `fill: #000;cursor: pointer;`;
+    nextMoveBtn.value.style = `fill: #0000006b;ursor: auto;`;
   }
   bigChild.value.style = `transform: translateX(${translateX}px)`;
 };
@@ -206,6 +206,7 @@ const changeTransalte = (i) => {
       transform: rotate(270deg);
     }
     &.next {
+      cursor: pointer;
       fill: #000;
       transform: rotate(90deg);
     }

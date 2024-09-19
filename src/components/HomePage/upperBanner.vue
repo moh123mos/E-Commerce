@@ -47,6 +47,9 @@
       }
     }
   }
+  @media (max-width: 991px) {
+    padding-top: 50px;
+  }
   @media (min-width: 992px) {
     padding-top: 170px;
   }

@@ -15,6 +15,10 @@ import AppLayout from "./components/AppLayout.vue";
   margin: 0;
   padding: 0;
 }
+body {
+  padding-right: 0 !important;
+  overflow: auto !important;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }

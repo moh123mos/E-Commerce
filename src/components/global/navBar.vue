@@ -579,13 +579,23 @@ nav {
   }
 }
 nav.mobile {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
   .center {
     text-align: center;
     img {
       width: 80%;
+      cursor: pointer;
     }
   }
+  .search,
+  .menu,
+  .account {
+    cursor: pointer;
+  }
   .cart {
+    cursor: pointer;
     position: relative;
     .count {
       right: -10px;
