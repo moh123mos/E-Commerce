@@ -105,28 +105,47 @@ let translateX = 340;
 let cnt = 0;
 const changeTransalte = (i) => {
   let falg = false;
-  let arr = [340, 0, -340];
+  let isDisabledPrev = true;
+  let arrSm = [340, 0, -340];
   let arrMd = [175, -175];
 
   if (screen.width > 767) falg = true;
   else falg = false;
 
+  //  in medium screens
   if (falg) {
     if (i) {
-      cnt = ++cnt % 2;
+      if (++cnt == 2) cnt = 1;
     } else {
-      if (!cnt) cnt = 2;
-      cnt = --cnt % 2;
+      if (--cnt < 0) cnt = 0;
     }
     translateX = arrMd[cnt];
-  } else {
-    if (i) {
-      cnt = ++cnt % 3;
-    } else {
-      if (!cnt) cnt = 3;
-      cnt = --cnt % 3;
+    if (cnt == 0) {
+      isDisabledPrev = true;
+    } else if (cnt == 1) {
+      isDisabledPrev = false;
     }
-    translateX = arr[cnt];
+  }
+  // in small screens
+  else {
+    if (i) {
+      if (++cnt == 3) cnt = 2;
+    } else {
+      if (--cnt < 0) cnt = 0;
+    }
+    translateX = arrSm[cnt];
+    if (cnt == 0) {
+      isDisabledPrev = true;
+    } else if (cnt == 2) {
+      isDisabledPrev = false;
+    }
+  }
+  if (isDisabledPrev) {
+    nextMoveBtn.value.style = `fill: #000`;
+    prvMoveBtn.value.style = `fill: #0000006b`;
+  } else {
+    prvMoveBtn.value.style = `fill: #000`;
+    nextMoveBtn.value.style = `fill: #0000006b`;
   }
   bigChild.value.style = `transform: translateX(${translateX}px)`;
 };
@@ -181,12 +200,13 @@ const changeTransalte = (i) => {
   top: 50%;
   transform: translateY(-50%);
   svg {
-    fill: #000;
     width: 40px;
     &.prv {
+      fill: #0000006b;
       transform: rotate(270deg);
     }
     &.next {
+      fill: #000;
       transform: rotate(90deg);
     }
   }

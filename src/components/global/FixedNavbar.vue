@@ -171,7 +171,7 @@ nav {
   }
   .links {
     margin-bottom: 0;
-    flex: 0.8;
+    width: 65%;
     .link {
       position: relative;
       a {

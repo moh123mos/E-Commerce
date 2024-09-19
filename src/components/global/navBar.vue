@@ -65,8 +65,8 @@
         <div
           class="cart"
           data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasExample"
-          aria-controls="offcanvasExample"
+          data-bs-target="#cart-offcanvas"
+          aria-controls="cart-offcanvas"
         >
           <span class="count position-absolute">2</span>
           <div class="icon">

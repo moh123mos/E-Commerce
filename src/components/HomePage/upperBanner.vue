@@ -47,5 +47,8 @@
       }
     }
   }
+  @media (min-width: 992px) {
+    padding-top: 170px;
+  }
 }
 </style>
