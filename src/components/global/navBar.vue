@@ -4,7 +4,7 @@
       class="first container d-flex justify-content-between align-items-center gap-3"
     >
       <div class="logo">
-        <img src="../../assets/images/logo.png" alt="" />
+        <img src="../../assets/ella_imgs/logo.png" alt="" />
       </div>
       <div class="search">
         <input type="text" class="" placeholder="Search the store" />
@@ -217,7 +217,7 @@
       </div>
     </div>
     <div class="center">
-      <img src="../../assets/images/footer-logo.webp" alt="logo" />
+      <img src="../../assets/ella_imgs/footer-logo.webp" alt="logo" />
     </div>
     <div class="right d-flex align-items-center">
       <div class="account" style="margin-right: 25px">
@@ -580,6 +580,7 @@ nav {
 }
 nav.mobile {
   position: fixed;
+  z-index: 2;
   width: 100%;
   background-color: #fff;
   .center {

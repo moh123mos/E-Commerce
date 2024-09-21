@@ -141,10 +141,10 @@ body {
   height: 9999px;
 }
 nav {
+  z-index: 2;
   &.desktop.fixed {
     position: fixed;
     width: 100%;
-    z-index: 2;
     background-color: #161880;
     color: #fff;
     padding: 25px 0;

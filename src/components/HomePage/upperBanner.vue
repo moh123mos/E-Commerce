@@ -13,7 +13,7 @@
       </div>
       <div class="bg-img">
         <img
-          src="@/assets/images/banner-bg-screen.png"
+          src="@/assets/ella_imgs/banner-bg-screen.png"
           width="100%"
           alt="upper banner"
         />
@@ -24,7 +24,7 @@
 <style lang="scss" scoped>
 .upper-banner {
   color: #fff;
-  background-image: url(../../assets/images/banner-bg-Recovered.png);
+  background-image: url(../../assets/ella_imgs/banner-bg-Recovered.png);
   background-repeat: no-repeat;
   background-size: cover;
   .container {
