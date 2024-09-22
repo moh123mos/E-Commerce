@@ -13,5 +13,5 @@ import TopOffers from "@/components/HomePage/TopOffers.vue";
 import UpperBanner from "@/components/HomePage/upperBanner.vue";
 import ProductsSwiper from "@/components/ProductsSwiper.vue";
 import { products } from "@/store/products";
-let flashDealsProducts = products.slice(0, 4);
+let flashDealsProducts = products.slice(0, 8);
 </script>
