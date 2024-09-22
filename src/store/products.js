@@ -16,6 +16,96 @@ export const products = [
     },
     keywords: ["hoodies", "sweaters", "apparel"],
   },
+
+  {
+    id: "8b5a2ee1-6055-422a-a666-b34ba28b76d4",
+    image: "products/men-golf-polo-t-shirt-blue.jpg",
+    name: "Men's Regular-Fit Quick-Dry Golf Polo Shirt",
+    description:
+      "This polo shirt is perfect for golfing. It is made from a comfortable, quick-drying material and has a regular fit.",
+    rating: {
+      stars: 4.5,
+      count: 2556,
+    },
+    priceCents: 1599,
+    variation: {
+      Color: ["Blue", "Black", "Red"],
+      Size: ["S", "M", "L"],
+    },
+    keywords: ["tshirts", "shirts", "apparel", "mens"],
+    type: "clothing",
+    sizeChartLink: "images/clothing-size-chart.png",
+  },
+  {
+    id: "19c6a64a-5463-4d45-9af8-e41140a4100c",
+    image: "products/duvet-cover-set-blue-twin.jpg",
+    name: "Duvet Cover Set with Zipper Closure",
+    description:
+      "This duvet cover set is perfect for adding a touch of comfort to your bedroom. It is made from a soft, comfortable material and has a zipper closure.",
+    rating: {
+      stars: 4,
+      count: 456,
+    },
+
+    priceCents: 2399,
+    variation: {
+      Color: ["Blue", "Red"],
+      Size: ["Twin", "Queen"],
+    },
+    keywords: ["bedroom", "bed sheets", "sheets", "covers", "home"],
+  },
+  {
+    id: "ee1f7c56-f977-40a4-9642-12ba5072e2b0",
+    image: "products/men-chino-pants-beige.jpg",
+    name: "Men's Classic-fit Pleated Chino Pants",
+    description:
+      "These pants are perfect for any occasion. They are made from a comfortable, classic-fit material and have a pleated design.",
+    rating: {
+      stars: 4.5,
+      count: 9017,
+    },
+
+    priceCents: 2290,
+    variation: {
+      Color: ["Beige", "Green", "Black"],
+      Size: ["30", "31", "32"],
+    },
+    keywords: ["pants", "apparel", "mens"],
+  },
+  {
+    id: "1c079479-8586-494f-ab53-219325432536",
+    image: "products/men-athletic-shoes-green.jpg",
+    name: "Men's Athletic Sneaker",
+    description:
+      "These shoes are perfect for any athletic activity. They are made from a durable material and have a comfortable fit.",
+    rating: {
+      stars: 4,
+      count: 229,
+    },
+
+    priceCents: 3890,
+    variation: {
+      Color: ["Green", "Black"],
+      Size: ["9", "10", "11", "12"],
+    },
+    keywords: ["shoes", "running shoes", "footwear", "mens"],
+  },
+  {
+    id: "4df68c27-fd59-4a6a-bbd1-e754ddb6d53c",
+    image: "products/men-navigator-sunglasses-brown.jpg",
+    name: "Men's Navigator Sunglasses Pilot",
+    description:
+      "These navigator sunglasses are perfect for any man. They have a classic design that will never go out of style and are made from a durable material that will last for years to come. The lenses are UV protected and provide excellent visual clarity. The frame is adjustable for a comfortable fit.",
+    rating: {
+      stars: 3.5,
+      count: 42,
+    },
+    priceCents: 1690,
+    variation: {
+      Color: ["Brown", "Silver"],
+    },
+    keywords: ["sunglasses", "glasses", "accessories", "shades"],
+  },
   {
     id: "77919bbe-0e56-475b-adde-4f24dfed3a04",
     image: "products/luxury-tower-set-6-piece.jpg",
@@ -177,23 +267,6 @@ export const products = [
     keywords: ["footwear", "sandals", "womens"],
   },
   {
-    id: "901eb2ca-386d-432e-82f0-6fb1ee7bf969",
-    image: "products/blackout-curtain-set-beige.webp",
-    name: "Blackout Curtains Set 4-Pack - Beige",
-    description:
-      "These blackout curtains are perfect for blocking out light and noise. They are made from a durable material and come in a set of 4.",
-    rating: {
-      stars: 4.5,
-      count: 232,
-    },
-    priceCents: 4599,
-    variation: {
-      Color: ["Gray", "Black", "Beige"],
-      "Waist size (Inches)": ["30", "31", "32"],
-    },
-    keywords: ["bedroom", "curtains", "home"],
-  },
-  {
     id: "82bb68d7-ebc9-476a-989c-c78a40ee5cd9",
     image: "products/men-slim-fit-summer-shorts-gray.jpg",
     name: "Men's Slim-Fit Summer Shorts",
@@ -273,25 +346,6 @@ export const products = [
   },
 
   {
-    id: "8b5a2ee1-6055-422a-a666-b34ba28b76d4",
-    image: "products/men-golf-polo-t-shirt-blue.jpg",
-    name: "Men's Regular-Fit Quick-Dry Golf Polo Shirt",
-    description:
-      "This polo shirt is perfect for golfing. It is made from a comfortable, quick-drying material and has a regular fit.",
-    rating: {
-      stars: 4.5,
-      count: 2556,
-    },
-    priceCents: 1599,
-    variation: {
-      Color: ["Blue", "Black", "Red"],
-      Size: ["S", "M", "L"],
-    },
-    keywords: ["tshirts", "shirts", "apparel", "mens"],
-    type: "clothing",
-    sizeChartLink: "images/clothing-size-chart.png",
-  },
-  {
     id: "b86ddc8b-3501-4b17-9889-a3bad6fb585f",
     image: "products/trash-can-with-foot-pedal-50-liter.jpg",
     name: "Trash Can with Foot Pedal - Brushed Stainless Steel",
@@ -308,24 +362,7 @@ export const products = [
     },
     keywords: ["garbage", "bins", "cans", "kitchen"],
   },
-  {
-    id: "19c6a64a-5463-4d45-9af8-e41140a4100c",
-    image: "products/duvet-cover-set-blue-twin.jpg",
-    name: "Duvet Cover Set with Zipper Closure",
-    description:
-      "This duvet cover set is perfect for adding a touch of comfort to your bedroom. It is made from a soft, comfortable material and has a zipper closure.",
-    rating: {
-      stars: 4,
-      count: 456,
-    },
 
-    priceCents: 2399,
-    variation: {
-      Color: ["Blue", "Red"],
-      Size: ["Twin", "Queen"],
-    },
-    keywords: ["bedroom", "bed sheets", "sheets", "covers", "home"],
-  },
   {
     id: "d2785924-743d-49b3-8f03-ec258e640503",
     image: "products/women-chunky-beanie-gray.webp",
@@ -339,59 +376,7 @@ export const products = [
     priceCents: 1250,
     keywords: ["hats", "winter hats", "beanies", "tuques", "apparel", "womens"],
   },
-  {
-    id: "ee1f7c56-f977-40a4-9642-12ba5072e2b0",
-    image: "products/men-chino-pants-beige.jpg",
-    name: "Men's Classic-fit Pleated Chino Pants",
-    description:
-      "These pants are perfect for any occasion. They are made from a comfortable, classic-fit material and have a pleated design.",
-    rating: {
-      stars: 4.5,
-      count: 9017,
-    },
 
-    priceCents: 2290,
-    variation: {
-      Color: ["Beige", "Green", "Black"],
-      Size: ["30", "31", "32"],
-    },
-    keywords: ["pants", "apparel", "mens"],
-  },
-  {
-    id: "1c079479-8586-494f-ab53-219325432536",
-    image: "products/men-athletic-shoes-green.jpg",
-    name: "Men's Athletic Sneaker",
-    description:
-      "These shoes are perfect for any athletic activity. They are made from a durable material and have a comfortable fit.",
-    rating: {
-      stars: 4,
-      count: 229,
-    },
-
-    priceCents: 3890,
-    variation: {
-      Color: ["Green", "Black"],
-      Size: ["9", "10", "11", "12"],
-    },
-    keywords: ["shoes", "running shoes", "footwear", "mens"],
-  },
-
-  {
-    id: "4df68c27-fd59-4a6a-bbd1-e754ddb6d53c",
-    image: "products/men-navigator-sunglasses-brown.jpg",
-    name: "Men's Navigator Sunglasses Pilot",
-    description:
-      "These navigator sunglasses are perfect for any man. They have a classic design that will never go out of style and are made from a durable material that will last for years to come. The lenses are UV protected and provide excellent visual clarity. The frame is adjustable for a comfortable fit.",
-    rating: {
-      stars: 3.5,
-      count: 42,
-    },
-    priceCents: 1690,
-    variation: {
-      Color: ["Brown", "Silver"],
-    },
-    keywords: ["sunglasses", "glasses", "accessories", "shades"],
-  },
   {
     id: "4e37dd03-3b23-4bc6-9ff8-44e112a92c64",
     image: "products/non-stick-cooking-set-15-pieces.webp",
