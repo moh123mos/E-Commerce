@@ -264,7 +264,7 @@ const changeTransalte = (i) => {
       left: -3%;
     }
     &.next {
-      right: -3%;
+      right: -1%;
     }
   }
 }

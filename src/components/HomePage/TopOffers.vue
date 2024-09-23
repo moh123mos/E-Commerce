@@ -54,10 +54,10 @@
     img {
       width: 100%;
       scale: 1;
-      transition: 0.5s;
+      transition: 0.7s;
       cursor: pointer;
       &:hover {
-        scale: 1.2;
+        scale: 1.05;
       }
     }
   }

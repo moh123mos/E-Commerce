@@ -9,9 +9,9 @@
       </div>
       <Swiper
         :modules="modules"
-        :navigation="{ prevIcon: '.swiper-prev', nextIcon: '.swiper-next' }"
+        navigation
         :pagination="{ el: '.swiper-pagination', clickable: true }"
-        :slides-per-view="responsiveDisplay"
+        :slides-per-view="responsiveDisplay - isFromTopProduct"
         :space-between="50"
         class="products d-flex flex-wrap justify-content-between pb-5"
       >
@@ -46,13 +46,18 @@
             From
             <b class="">${{ ((item.priceCents * 0.9) / 100).toFixed(2) }}</b>
           </div>
-          <div class="variations d-flex gap-3 my-2">
+
+          <div
+            class="variations d-flex gap-3 my-2"
+            v-if="item.variation != null"
+          >
             <span
               class="outer rounded-circle border border-dark"
               :class="'outer-' + i + ' ' + (j == 0 && ' active')"
               @click="ChangeVariation(i, j, vari)"
               v-for="(vari, j) in item.variation.Color"
               :key="j"
+              :title="vari"
             >
               <span :style="'background: ' + vari" class="rounded-circle">
               </span>
@@ -64,8 +69,6 @@
             Choose Options
           </div>
         </swiper-slide>
-        <div class="swiper-prev"></div>
-        <div class="swiper-next"></div>
         <div class="swiper-pagination"></div>
       </Swiper>
     </div>
@@ -83,26 +86,27 @@ let props = defineProps({
   products: {
     type: Array,
   },
+  isFromTopProduct: {
+    type: Boolean,
+  },
 });
 const getImagePath = (imgPath) => {
   return require(`@/assets/${imgPath}`);
 };
 
 let responsiveDisplay = ref(4);
-
 const mediaQueries = [
   { query: "(max-width: 576px)", value: 1 },
   { query: "(max-width: 767px)", value: 2 },
   { query: "(max-width: 991px)", value: 3 },
   { query: "(min-width: 1199px)", value: 4 },
 ];
-
 mediaQueries.forEach((mq) => {
   const mediaQueryList = window.matchMedia(mq.query);
   const updateValue = (event) => {
     if (event.matches) {
       responsiveDisplay.value = mq.value;
-      console.log(`Current value is now: ${responsiveDisplay.value}`);
+      // console.log(`Current value is now: ${responsiveDisplay.value}`);
     }
   };
   // Set the initial value
@@ -110,6 +114,7 @@ mediaQueries.forEach((mq) => {
   // Add a listener for changes
   mediaQueryList.addListener(updateValue);
 });
+
 const ChangeVariation = (item, index, color) => {
   let spansOuterVariation = document.querySelectorAll(`.outer-${item}`);
   let imgOfProduct = document.querySelector(`.product-${item} .img img`);
@@ -150,11 +155,19 @@ const ChangeVariation = (item, index, color) => {
     }
     .swiper-button-next,
     .swiper-button-prev {
-      border: 3px solid #000;
+      border: 2px solid #5b5b5b;
       width: 40px;
       height: 40px;
       border-radius: 50%;
       top: 40%;
+      background-color: #fff;
+      transition: 0.2s;
+      &:hover {
+        background-color: #fd6506;
+        &::after {
+          color: #fff;
+        }
+      }
       &::after {
         font-size: 20px;
         font-weight: 900;
@@ -167,12 +180,25 @@ const ChangeVariation = (item, index, color) => {
     h2 {
       font-weight: 800;
     }
+    .shop-all {
+      height: fit-content;
+      border-bottom: 1px solid #000;
+      a {
+        text-decoration: none;
+      }
+    }
   }
   .product {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 550px;
+    .img {
+      text-align: center;
+      img {
+        max-width: 350px;
+      }
+    }
     .product-details {
       font-size: 18px;
       letter-spacing: 0.5px;
@@ -196,6 +222,7 @@ const ChangeVariation = (item, index, color) => {
     }
     .variations {
       height: 40px;
+      justify-content: center;
       span.outer {
         height: 40px;
         width: 40px;
@@ -224,6 +251,10 @@ const ChangeVariation = (item, index, color) => {
       padding: 10px 0;
       &.shadow-edit {
         box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.15);
+      }
+      &:hover {
+        background-color: #007acc;
+        color: #fff !important;
       }
     }
   }
