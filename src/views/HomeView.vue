@@ -66,6 +66,32 @@
         </div>
       </div>
     </div>
+    <div class="womens-products">
+      <ProductsSwiper
+        :products="womensProducts"
+        titleSwiper="Top Women's Products"
+        colorTitle="dark"
+        parentClass="womens-products"
+      />
+      <div class="poster womens-poster container py-5 d-flex gap-3">
+        <div class="img w-50" style="height: 450px">
+          <img
+            src="@/assets/ella_imgs/womens-poster-left.png"
+            width="100%"
+            height="100%"
+            alt=""
+          />
+        </div>
+        <div class="img w-50" style="height: 450px">
+          <img
+            src="@/assets/ella_imgs/womens-poster-right.png"
+            width="100%"
+            height="100%"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
     <div class="home-appliance">
       <ProductsSwiper
         :products="homeProducts"
@@ -84,6 +110,9 @@
         </div>
       </div>
     </div>
+    <!-- top brands -->
+    <!-- recommended for you -->
+    <!-- footer -->
   </div>
 </template>
 
