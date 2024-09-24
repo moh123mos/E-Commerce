@@ -65,7 +65,7 @@ let categories = reactive([
       "https://new-ella-demo.myshopify.com/cdn/shop/files/home-appliances.png?v=4122646624966862882",
   },
   {
-    title: "Kichen Appliances",
+    title: "Kitchen Appliances",
     imgURL:
       "https://new-ella-demo.myshopify.com/cdn/shop/files/kitchen-appliances.png?v=912885117927234410",
   },

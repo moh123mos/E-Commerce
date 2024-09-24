@@ -1,8 +1,10 @@
 <template>
-  <div class="products-swiper" @resize="resizeHandler()">
+  <div class="products-swiper">
     <div class="container py-5">
       <div class="header d-flex justify-content-between">
-        <h2 class="text-danger fs-2 fw-blod" @click="inc">Flash Deals</h2>
+        <h2 class="fs-2 fw-blod" :class="'text-' + colorTitle">
+          {{ titleSwiper }}
+        </h2>
         <div class="shop-all">
           <a href="#" class="text-dark">Shop All</a>
         </div>
@@ -11,7 +13,7 @@
         :modules="modules"
         navigation
         :pagination="{ el: '.swiper-pagination', clickable: true }"
-        :slides-per-view="responsiveDisplay - isFromTopProduct"
+        :slides-per-view="responsiveDisplay"
         :space-between="50"
         class="products d-flex flex-wrap justify-content-between pb-5"
       >
@@ -64,6 +66,11 @@
             </span>
           </div>
           <div
+            class="altr-variation"
+            v-else
+            style="height: 56px; width: 100%"
+          ></div>
+          <div
             class="btn btn-outline-warning text-dark border border-dark rounded-pill shadow-edit"
           >
             Choose Options
@@ -86,8 +93,14 @@ let props = defineProps({
   products: {
     type: Array,
   },
-  isFromTopProduct: {
-    type: Boolean,
+  titleSwiper: {
+    type: String,
+  },
+  colorTitle: {
+    type: String,
+  },
+  parentClass: {
+    type: String,
   },
 });
 const getImagePath = (imgPath) => {
@@ -116,17 +129,22 @@ mediaQueries.forEach((mq) => {
 });
 
 const ChangeVariation = (item, index, color) => {
-  let spansOuterVariation = document.querySelectorAll(`.outer-${item}`);
-  let imgOfProduct = document.querySelector(`.product-${item} .img img`);
+  let spansOuterVariation = document.querySelectorAll(
+    `.${props.parentClass} .outer-${item}`
+  );
+  let imgOfProduct = document.querySelector(
+    `.${props.parentClass} .product-${item} .img img`
+  );
   let mainSrc = props.products[item].image;
   let mainColor = props.products[item].variation.Color[0].toLowerCase();
   color = color.toLowerCase();
   let curSrc = mainSrc.replace("products", "products/variations");
   curSrc = curSrc.replace(mainColor, color);
-  console.log(curSrc);
-  imgOfProduct.setAttribute("src", getImagePath(curSrc));
+  // console.log(curSrc);
+  if (imgOfProduct != null)
+    imgOfProduct.setAttribute("src", getImagePath(curSrc));
   // console.log(color);
-  console.log(imgOfProduct);
+  // console.log(imgOfProduct);
   spansOuterVariation.forEach((ele, idx) => {
     ele.classList.remove("active");
     ele.classList.remove("false");
@@ -196,7 +214,7 @@ const ChangeVariation = (item, index, color) => {
     .img {
       text-align: center;
       img {
-        max-width: 350px;
+        max-width: 250px;
       }
     }
     .product-details {

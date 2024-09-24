@@ -71,7 +71,7 @@
           </swiper-slide>
           <div class="swiper-pagination"></div>
         </Swiper>
-        <div class="img d-sm-none d-md-block" style="width: 60%">
+        <div class="img d-none d-md-block" style="width: 60%">
           <img
             src="@/assets/ella_imgs/vr-banner.webp"
             width="100%"
