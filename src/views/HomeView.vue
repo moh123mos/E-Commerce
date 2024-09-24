@@ -6,10 +6,12 @@
     <ProductsSwiper :products="flashDealsProducts" />
     <TopCategories />
     <TopProducts />
+    <OurAdvantages />
   </div>
 </template>
 
 <script setup>
+import OurAdvantages from "@/components/HomePage/OurAdvantages.vue";
 import TheFeatures from "@/components/HomePage/TheFeatures.vue";
 import TopCategories from "@/components/HomePage/TopCategories.vue";
 import TopOffers from "@/components/HomePage/TopOffers.vue";
