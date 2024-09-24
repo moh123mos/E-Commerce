@@ -116,6 +116,19 @@ console.log(womensProducts);
 </script>
 
 <style lang="scss" scoped>
+.poster {
+  .img {
+    overflow: hidden;
+    img {
+      scale: 1;
+      transition: 0.5s;
+      cursor: pointer;
+      &:hover {
+        scale: 1.05;
+      }
+    }
+  }
+}
 @media (max-width: 991px) {
   .poster {
     flex-wrap: wrap;
