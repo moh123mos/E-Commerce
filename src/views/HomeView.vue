@@ -110,9 +110,17 @@
         </div>
       </div>
     </div>
-    <!-- top brands -->
     <!-- recommended for you -->
-    <!-- footer -->
+    <div class="recommended-for-you">
+      <ProductsSwiper
+        :products="recommendedForYou"
+        titleSwiper="Top Home Appliances"
+        colorTitle="dark"
+        parentClass="recommended-for-you"
+      />
+    </div>
+    <!-- why shop with us -->
+    <WhyShop />
   </div>
 </template>
 
@@ -124,6 +132,7 @@ import TopOffers from "@/components/HomePage/TopOffers.vue";
 import TopProducts from "@/components/HomePage/TopProducts.vue";
 import UpperBanner from "@/components/HomePage/upperBanner.vue";
 import ProductsSwiper from "@/components/ProductsSwiper.vue";
+import WhyShop from "@/components/HomePage/WhyShop.vue";
 
 import { products } from "@/store/products";
 const getProductsByCategory = (category) => {
@@ -133,15 +142,19 @@ const getProductsByCategory = (category) => {
     }
   });
 };
+const getProductsRandomly = (cnt) => {
+  let arr = [];
+  for (let i = 0; i < cnt; i++) {
+    arr.push(products[Math.floor(Math.random() * 36)]);
+  }
+  return arr;
+};
 let flashDealsProducts = products.slice(0, 8);
 let kitchenProducts = getProductsByCategory("kitchen");
-let accessoriesProducts = getProductsByCategory("accessories");
 let mensProducts = getProductsByCategory("mens");
 let womensProducts = getProductsByCategory("womens");
 let homeProducts = getProductsByCategory("home");
-console.log(accessoriesProducts);
-console.log(mensProducts);
-console.log(womensProducts);
+let recommendedForYou = getProductsRandomly(5);
 </script>
 
 <style lang="scss" scoped>
